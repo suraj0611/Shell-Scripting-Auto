@@ -7,6 +7,7 @@ original_file="/d/Android_Projects/ydlcustomerappflutterjan2024/lib/launcher/fik
 new_file="/d/Android_Projects/ydlcustomerappflutterjan2024/lib/launcher/$1.dart"
 new_name="$2"
 new_name2="$3"
+color_code="$4"
 
 if [[ -f "$original_file" ]]
 then
@@ -265,7 +266,10 @@ echo "temp2 file created in app_colors"
 
 sed -i "s/FikaFitness/$new_name2/g" "$temp_file2"
 
+sed -i "s/0xffFFC410/$color_code/g" "$temp_file2"
+
 sed -i "${insert_line2}r $temp_file2" "$appcolor_file"
+
 
 echo "file2 inserted successfully in app_colors file"
 
